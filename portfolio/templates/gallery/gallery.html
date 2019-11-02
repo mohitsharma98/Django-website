@@ -3,29 +3,23 @@
 {% block content %}
 
 <div class="projects-2" id="projects-2">
-        <div class="container">
-          <div class="row">
+    <div class="container">
+        <div class="row">
+            
+            {% for image in gallery %}
             <div class="col-md-4">
-              <div class="card card-plain">
-                <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank">
-                  <div class="card-header card-header-image">
-                    <img src="https://s3.amazonaws.com/creativetim_bucket/products/34/original/opt_lbd_pro_thumbnail.jpg?1512732672">
-                  </div>
-                </a>
-                <!-- <div class="card-body ">
-                  <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank">
-                    <h4 class="card-title">Light Bootstrap Dashboard</h4>
-                  </a>
-                  <h6 class="card-category">Premium Template</h6>
-                  <p class="card-description">
-                    Light Bootstrap Dashboard PRO is a Bootstrap Admin Theme designed to look simple and beautiful. Forget about boring dashboards and grab yourself a copy to kickstart new project!
-                  </p> -->
+                    <div class="card card-plain">
+                        <a href="" target="_blank">
+                            <div class="card-header card-header-image">
+                                <img src="{{image.image.url}}">
+                            </div>
+                        </a>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
         </div>
-      </div>
-      <!--     *********    END PROJECTS 2      *********      -->
-  
+    </div>
+</div>
+<!--     *********    END PROJECTS 2      *********      -->
+
 {% endblock content %}
