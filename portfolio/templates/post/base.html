@@ -1,4 +1,6 @@
 {% load staticfiles%}
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{% static 'assets/css/material-kit.css' %}" rel="stylesheet" />
-    <title>Document</title>
+    {% block title %}
+    <title>Base Template</title>
+    {% endblock title %}
+    
 </head>
 
 <body>
