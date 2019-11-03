@@ -9,7 +9,7 @@
             {% for image in gallery %}
             <div class="col-md-4">
                     <div class="card card-plain">
-                        <a href="" target="_blank">
+                        <a href="{{image.image.url}}" data-lightbox="mygallery" data-title="{{image.image_des}}">
                             <div class="card-header card-header-image">
                                 <img src="{{image.image.url}}">
                             </div>
