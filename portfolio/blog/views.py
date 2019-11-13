@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 from django.views.generic import DetailView
 
@@ -13,5 +13,8 @@ def BlogListView(request):
 
 
 class BlogDetailView(DetailView):
-    model = Post
-    template_name = "blog/blog_detail.html"
+
+    def get(self, request, *args, **kwargs):
+        post = get_object_or_404(Post, pk=kwargs['pk'])
+        context = {'post': post}
+        return render(request, 'blog/blog_detail.html', context)
