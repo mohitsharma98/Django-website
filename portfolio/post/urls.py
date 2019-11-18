@@ -5,5 +5,5 @@ from post.views import index
 app_name = 'post'
 
 urlpatterns = [
-    path('', index.as_view(), name='index'),
+    path('', index, name='index'),
 ]

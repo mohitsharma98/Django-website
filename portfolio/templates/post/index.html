@@ -8,8 +8,21 @@
 
 {% block content %}
 
+<style>
+    #backimg {
+        background-image: url("{% static 'assets/images/about-me.jpg' %}");
+    }
+
+    #txt {
+        color: white;
+    }
+</style>
+
 <body>
     <!-- Carousel Card -->
+
+    {% for o in object_list  %}
+
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -18,85 +31,18 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="page-header header-filter" style="background-image: url('./static/assets/images/img1.jpg');">
-                    <!-- <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 text-left">
-                                <h1 class="title">Material Kit PRO</h1>
-                                <h4>Dolce &amp; Gabbana is a luxury Italian fashion house founded in 1985 in Legnano by
-                                    Italian designers Domenico Dolce and Stefano Gabbana. The two met in Milan in 1980
-                                    and designed for the same fashion house.</h4>
-                                <br>
-                                <div class="buttons">
-                                    <a href="#pablo" class="btn btn-danger btn-lg">
-                                        Read More
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link">
-                                        <i class="fa fa-facebook-square"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link">
-                                        <i class="fa fa-get-pocket"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                <div class="page-header header-filter"
+                    style="background-image: url('{{o.index_image1.url}}');">
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="page-header header-filter" style="background-image: url('./static/assets/images/img2.jpg');">
-                    <!-- <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 ml-auto mr-auto text-center">
-                                <h1 class="title">Material Kit PRO</h1>
-                                <h4>Dolce &amp; Gabbana is a luxury Italian fashion house founded in 1985 in Legnano by
-                                    Italian designers Domenico Dolce and Stefano Gabbana. The two met in Milan in 1980
-                                    and designed for the same fashion house.</h4>
-                                <br>
-                                <h6>Connect with us on:</h6>
-                                <div class="buttons">
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link btn-lg">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link btn-lg">
-                                        <i class="fa fa-facebook-square"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link btn-lg">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-white btn-link btn-lg">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                <div class="page-header header-filter"
+                    style="background-image: url('{{o.index_image2.url}}');">
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="page-header header-filter" style="background-image: url('./static/assets/images/img3.jpg');">
-                    <!-- <div class="container">
-                        <div class="row">
-                            <div class="col-md-7 ml-auto text-right">
-                                <h1 class="title">New Collection 50% Off</h1>
-                                <h4>There&apos;s no doubt that Tesla is delighted with the interest, but the data also
-                                    raises a few questions. How long will it take for Tesla to fulfill all those extra
-                                    orders?</h4>
-                                <br>
-                                <div class="buttons">
-                                    <a href="#pablo" class="btn btn-white btn-link btn-lg">
-                                        <i class="material-icons">share</i> Share Offer
-                                    </a>
-                                    <a href="#pablo" class="btn btn-danger btn-lg">
-                                        <i class="material-icons">shopping_cart</i> Shop Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                <div class="page-header header-filter"
+                    style="background-image: url('{{o.index_image3.url}}');">
                 </div>
             </div>
         </div>
@@ -109,6 +55,100 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+
+
+
+
+    <!------------------------- Section 2------------------------------->
+
+
+
+
+    <div class="cd-section" id="contactus">
+        <div class="contactus-1 section-image" id='backimg'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="card card-plain">
+                            <div class="card-header card-header-image">
+                                <img src="{{o.model_image.url}}" alt="No Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="txt" class="col-md-6 col-sm-6">
+                        <h1>Meet Aryaman</h1>
+                        <hr color="white"><br>
+                        <p style="font-size:20px;">
+                            {{o.aboutme}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------   FOOTER   ------------------------>
+    <!-- <div class="social-line social-line-white text-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <h4 class="title"></h4>
+            </div>
+            <a href="{{o.facebooklink}}" target="_blank" class="btn btn-facebook btn-round m-2">
+              <i class="fa fa-facebook-square"></i> Facebook &#xB7; 3.2k
+            </a>
+            <a href="mailto:{{o.gmaillink}}" target="_blank" class="btn btn-google btn-round m-2">
+              <i class="fa fa-google-plus"></i> Google &#xB7; 1.2k
+            </a>
+            <a href="{{o.instagramlink}}" target="_blank" class="btn btn-dribbble btn-round m-2">
+              <i class="fa fa-instagram"></i> Instagram &#xB7; 1.8k
+            </a>
+            <a href="{{o.pinterestlink}}" target="_blank" class="btn btn-pinterest btn-round m-2">
+                <i class="fa fa-pinterest"></i> Pinterest &#xB7; 1.8k
+              </a>
+          </div>
+        </div>
+      </div> -->
+
+
+          <div class="social-line social-line-big-icons social-line-black">
+              <div class="container">
+                <div class="row">
+                  <!-- <div class="col-md-2 col-4">
+                    <a href="#pablo" class="btn btn-link btn-just-icon btn-white">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </div> -->
+                  <div class="col-md-3 col-4">
+                    <a href="{{o.facebooklink}}" target="_blank" class="btn btn-link btn-just-icon btn-white">
+                      <i class="fa fa-facebook-square"></i>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-4">
+                    <a href="{{o.gmaillink}}" target="_blank" class="btn btn-link btn-just-icon btn-white">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </div>
+                  <div class="col-md-2 col-4">
+                    <a href="{{o.pinterestlink}}" target="_blank" class="btn btn-link btn-just-icon btn-white">
+                      <i class="fa fa-pinterest"></i>
+                    </a>
+                  </div>
+                  <!-- <div class="col-md-2 col-4">
+                    <a href="#pablo" class="btn btn-link btn-just-icon btn-white">
+                      <i class="fa fa-youtube-play"></i>
+                    </a>
+                  </div> -->
+                  <div class="col-md-3 col-4">
+                    <a href="{{o.instagramlink}}" target="_blank" class="btn btn-link btn-just-icon btn-white">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+    {% endfor %}
 </body>
 
 {% endblock %}
