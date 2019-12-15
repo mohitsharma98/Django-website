@@ -21,10 +21,9 @@
               {% for i in info %}
                 
               <h4 class="info-title">Find me at</h4>
-              <p>{{ i.address }}</p>
-              <!-- <p> #191 Holy City,
-                <br>Amritsar, Punjab,
-                <br> India -->
+              <p> {{ i.addressline1 }}
+                <br>{{ i.addressline2 }}
+                <br> {{ i.addressline3 }}
               </p>
             </div>
           </div>
@@ -34,10 +33,9 @@
             </div>
             <div class="description">
               <h4 class="info-title">Give me a ring</h4>
-              <p>{{i.phone}}</p>
-              <!-- <p> Aryaman Arya
-                <br> +918872460311
-                <br> Mon - Fri, 8:00-22:00 -->
+              <p> Aryaman Arya
+                  <br> {{i.phone}}
+                  <br> {{i.time}}
               </p>
             </div>
           </div>
