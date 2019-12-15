@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from contact.forms import ContactForm
-from contact.models import Contact
+from contact.models import Contact, Information
 
 # Create your views here.
 
@@ -10,8 +10,11 @@ def ContactView(request):
         form.save()
         form = ContactForm()
     
+    info = Information.objects.all()
+
     context = {
         'form' : form,
+        'info' : info,
     }
 
     return render(request, "contact/contact.html", context)
